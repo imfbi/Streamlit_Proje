@@ -11,11 +11,16 @@ from sklearn.preprocessing import StandardScaler
 
 
 def load_data(dataset_name):
-    if dataset_name == 'Diabetes':
-        data = pd.read_csv('C:/Users/PC/Desktop/diabetes.csv')
+   if dataset_name == 'Diabetes':
+        url = 'https://raw.githubusercontent.com/imfbi/Streamlit_Proje/master/diabetes.csv'
     elif dataset_name == 'Breast Cancer':
-        data = pd.read_csv('C:/Users/PC/Desktop/Breast Cancer Wisconsin Data.csv')
-    return data
+        url = 'https://raw.githubusercontent.com/imfbi/Streamlit_Proje/master/Breast%20Cancer%20Wisconsin%20Data.csv'
+    
+    # URL'den dosyayı indirme
+    response = requests.get(url)
+    
+    # İndirilen içeriği DataFrame'e dönüştürme
+    data = pd.read_csv(response.content)
 
 def clean_data(data):
     if 'Unnamed: 32' in data.columns:
