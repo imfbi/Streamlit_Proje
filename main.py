@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 def load_data(dataset_name):
    if dataset_name == 'Diabetes':
         url = 'https://raw.githubusercontent.com/imfbi/Streamlit_Proje/master/diabetes.csv'
-    elif dataset_name == 'Breast Cancer':
+    elif dataset_name == 'Breast Cancer Wisconsin Data':
         url = 'https://raw.githubusercontent.com/imfbi/Streamlit_Proje/master/Breast%20Cancer%20Wisconsin%20Data.csv'
     
     # URL'den dosyayı indirme
